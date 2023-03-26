@@ -13,7 +13,7 @@ const eqArrays = function (array1, array2) {
 };
 
 //Function that recives two arrays as arguments and console.log an appropriate message to the console.
-const assertEqual = function (actual, expected) {
+const assertArraysEqual = function (actual, expected) {
   if (eqArrays(actual, expected)) {
     return console.log(`✅ Assertion Passed: ${actual} === ${expected}`);
   } else {
