@@ -1,25 +1,4 @@
-// function that takes two arrays and returns boolean based on a perfect match
-const eqArrays = function (array1, array2) {
-  if (array1.length !== array2.length) {
-    return false;
-  } else {
-    for (let i = 0; i < array1.length; i++) {
-      if (array1[i] !== array2[i]) {
-        return false;
-      }
-    }
-  }
-  return true;
-};
-
-//Function that recives two arrays as arguments and console.log an appropriate message to the console.
-const assertArraysEqual = function (actual, expected) {
-  if (eqArrays(actual, expected)) {
-    return console.log(`✅ Assertion Passed: ${actual} === ${expected}`);
-  } else {
-    return console.log(`🛑 Assertion Failed: ${actual} !== ${expected}`);
-  }
-};
+const assertArraysEqual = require("./assertArraysEqual.js");
 
 /*
  * function that returns an array with only the middle element(s) of the provided array.
@@ -40,14 +19,4 @@ const middle = function (array) {
   return middle;
 };
 
-//test to see that middle function does not change the original array
-const testArray = [1, 2, 3, 4];
-middle(testArray);
-assertArraysEqual(testArray, [1, 2, 3, 4]);
-
-// additional tests
-assertArraysEqual(middle([1, 2, 3]), [2]);
-assertArraysEqual(middle([1, 2, 3, 4]), [2, 3]);
-assertArraysEqual(middle([1, 2, 3, 4, 5, 6]), [3, 4]);
-assertArraysEqual(middle([1, 2]), []);
-assertArraysEqual(middle([]), []);
+module.exports = middle;
