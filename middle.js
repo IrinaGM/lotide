@@ -1,5 +1,3 @@
-const assertArraysEqual = require("./assertArraysEqual.js");
-
 /*
  * function that returns an array with only the middle element(s) of the provided array.
  * For arrays with one or two elements there is no middle, function will return an empty array.
