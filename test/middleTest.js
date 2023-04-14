@@ -1,14 +1,25 @@
 const middle = require("../middle.js");
-const assertArraysEqual = require("../assertArraysEqual.js");
+const assert = require("chai").assert;
 
-//test to see that middle function does not change the original array
-const testArray = [1, 2, 3, 4];
-middle(testArray);
-assertArraysEqual(testArray, [1, 2, 3, 4]);
-
-// additional tests
-assertArraysEqual(middle([1, 2, 3]), [2]);
-assertArraysEqual(middle([1, 2, 3, 4]), [2, 3]);
-assertArraysEqual(middle([1, 2, 3, 4, 5, 6]), [3, 4]);
-assertArraysEqual(middle([1, 2]), []);
-assertArraysEqual(middle([]), []);
+describe("#middle", () => {
+  it("checks that original array has not changed unfer middle function execution", () => {
+    const testArray = [1, 2, 3, 4];
+    middle(testArray);
+    assert.deepEqual(testArray, [1, 2, 3, 4]);
+  });
+  it("returns [2] for [1, 2, 3]", () => {
+    assert.deepEqual(middle([1, 2, 3]), [2]);
+  });
+  it("returns [2,3] for [1, 2, 3, 4]", () => {
+    assert.deepEqual(middle([1, 2, 3, 4]), [2, 3]);
+  });
+  it("returns [-3,-4] for [-1, -2, -3, -4, -5, -6]", () => {
+    assert.deepEqual(middle([1, 2, 3, 4, 5, 6]), [3, 4]);
+  });
+  it("returns [] for [1, 2]", () => {
+    assert.deepEqual(middle([1, 2]), []);
+  });
+  it("returns [] for []", () => {
+    assert.deepEqual(middle([]), []);
+  });
+});
