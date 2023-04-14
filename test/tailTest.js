@@ -1,13 +1,12 @@
 const tail = require("../tail.js");
 const assert = require("chai").assert;
-const expect = require("chai").expect;
 
 describe("#tail", () => {
   it("returns [6,7] for [5,6,7]", () => {
-    expect(tail([5, 6, 7])).to.eql([6, 7]);
+    assert.deepEqual(tail([5, 6, 7]), [6, 7]);
   });
   it("returns ['Lighthouse','Labs'] for ['Hello', 'Lighthouse', 'Labs']", () => {
-    expect(tail(["Hello", "Lighthouse", "Labs"])).to.eql([
+    assert.deepEqual(tail(["Hello", "Lighthouse", "Labs"]), [
       "Lighthouse",
       "Labs",
     ]);
@@ -16,10 +15,10 @@ describe("#tail", () => {
     assert.strictEqual(tail("Test"), "est");
   });
   it("returns [] for ['one']", () => {
-    expect(tail(["one"])).to.eql([]);
+    assert.deepEqual(tail(["one"]), []);
   });
   it("returns [] for []", () => {
-    expect(tail([])).to.eql([]);
+    assert.deepEqual(tail([]), []);
   });
   it("returns undefined for tail()", () => {
     assert.strictEqual(tail(), undefined);
