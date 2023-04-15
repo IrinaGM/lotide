@@ -1,3 +1,5 @@
+const { assert } = require("console");
+
 // function that gets the actual and the expected results and returns if they are equal or not.
 const assertEqual = function (actual, expected) {
   if (actual === expected) {
@@ -43,11 +45,11 @@ const testOneExpectedResult = {
   n: 1,
 };
 
-assertEqual(testOneActualResult["h"], testOneExpectedResult["h"]);
+assertEqual(testOneActualResult["h"], testOneExpectedResult["h"]); // compare result of letter that exists
+assertEqual(testOneActualResult["a"], testOneExpectedResult["a"]); // compare result of a letter that doesn't exist
 
 const testTwoSentence = "";
 const testTwoActualResult = countLetters(testTwoSentence);
-const testTwoExpectedResult = {};
 
 assertEqual(Object.keys(testTwoActualResult).length, 0);
 
@@ -66,5 +68,6 @@ const testThreeExpectedResult = {
   g: 1,
 };
 
+// Test for capital letters
 assertEqual(testThreeActualResult["C"], testThreeExpectedResult["C"]);
 assertEqual(testThreeActualResult["c"], testThreeExpectedResult["c"]);
