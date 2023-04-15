@@ -22,8 +22,7 @@ const eqArrays = function (array1, array2) {
 
 /*
  * Function that takes in two Objects.
- * Returns true if both objects have identical keys with identical values.
- * Otherwise returns false.
+ * Returns true if both objects are equal and false otherwise.
  */
 
 const eqObjects = function (obj1, obj2) {
@@ -31,14 +30,14 @@ const eqObjects = function (obj1, obj2) {
     for (const key in obj1) {
       // check if object - TODO
 
-      // check if array
+      // If array compare arrays
       if (Array.isArray(obj1[key]) && Array.isArray(obj2[key])) {
         let returnedAnswer = eqArrays(obj1[key], obj2[key]);
         if (returnedAnswer === false) {
           return false;
         }
       } else {
-        // else compare prim values
+        // compare primitive values
         if (obj1[key] !== obj2[key]) {
           return false;
         }
