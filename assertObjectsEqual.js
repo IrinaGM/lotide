@@ -25,14 +25,14 @@ const eqObjects = function (obj1, obj2) {
     for (const key in obj1) {
       // check if object - TODO
 
-      // check if array
+      // If array compare arrays
       if (Array.isArray(obj1[key]) && Array.isArray(obj2[key])) {
         let returnedAnswer = eqArrays(obj1[key], obj2[key]);
         if (returnedAnswer === false) {
           return false;
         }
       } else {
-        // else compare prim values
+        // compare primitive values
         if (obj1[key] !== obj2[key]) {
           return false;
         }
@@ -65,3 +65,4 @@ assertObjectsEqual({ 1: "test" }, { 1: "test" });
 assertObjectsEqual({ 1: 0 }, { 2: 0 });
 assertObjectsEqual({}, {});
 assertObjectsEqual({ 1: ["Test", 2] }, { 1: ["Test", 2] });
+assertObjectsEqual({ 1: { Test: "a" } }, { 1: { Test: "a" } });
