@@ -1,6 +1,6 @@
 {
   "name": "@irinagm/lotide",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "The Lotide project is a modular collection of functions that operate on data, namely Arrays and Objects. This library was published for learning purposes. It is not intended for use in production-grade software",
   "main": "index.js",
   "directories": {
@@ -22,9 +22,5 @@
   "devDependencies": {
     "chai": "^4.3.7",
     "mocha": "^9.2.2"
-  },
-  "dependencies": {
-    "@irinagm/lotide": "^1.0.0",
-    "my-package": "^0.0.0"
   }
 }
